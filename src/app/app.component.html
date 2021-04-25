@@ -54,6 +54,22 @@
           class= "form-control"
           [(ngModel)] = "answer" ></textarea>
           <p>your reply : {{ answer}}</p>
+          <div class="radio" *ngFor="let gen of genders">
+            <label>
+              <input type="radio"
+              name="gender"
+              [(ngModel)]= "sex"
+              [value]="gen"
+              required
+
+               >{{gen}}
+            </label>
+          </div>
+          <div [ngStyle]="{display: (sex=='female') ? 'block' : 'none'}" >
+
+            <label> provide age and details</label>
+            <textarea ></textarea>
+          </div>
 
         </div>
         <button
